@@ -29,9 +29,9 @@ def generate():
 
     response = requests.post(url, json=payload, headers=headers)
     result = json.loads(response.text)
-    images = result['amazon']['items']
-    image_urls = [n['image_resource_url'] for n in images]
-    return jsonify({"images": image_urls})
+    # images = result['amazon']['items']
+    # image_urls = [n['image_resource_url'] for n in images]
+    return jsonify(response)
 
 if __name__ == "__main__":
     app.run(host="0.0.0.0")
